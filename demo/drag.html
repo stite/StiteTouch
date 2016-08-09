@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>Document</title>
+    <style type="text/css">
+    body{ background: #efeded; }
+		*{margin: 0; padding:0;}
+        h3{ padding: 10px; text-align: center; font-size: 13px; font-weight: normal; color: #fff; background: #0076ad;}
+        #div1{ margin: 0 auto; margin-top: 50px; display: block; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; box-shadow: 0px 0px 20px #adadad;}
+	</style>
+    <script src="../js/stite.touch.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <h3>touch中的drag方法</h3>
+    <img src="../img/d.jpg" id="div1" alt="" />
+    <script type="text/javascript">
+    	window.onload = function(){
+    		var odiv = new StiteTouch('#div1');
+    		var lax,lay;
+            odiv.touchstart(function(ev){
+                ev.preventDefault();
+            });
+    		odiv.drag(function(ev){
+    			lax = lax||0;
+    			lay = lay||0;
+    			var offx = ev.x+lax;
+    			var offy = ev.y+lay;
+    			this.style.webkitTransform = "translate3d(" + offx + "px," + offy + "px,0)";
+    		});
+    		odiv.dragend(function(ev){
+    			lax+=ev.x;
+    			lay+=ev.y;
+    		});
+    	}
+    </script>
+</body>
+</html>

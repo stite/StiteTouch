@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <title>Document</title>
+    <style type="text/css">
+    body{ background: #efeded; }
+		*{margin: 0; padding:0;}
+        h3{ padding: 10px; text-align: center; font-size: 13px; font-weight: normal; color: #fff; background: #0076ad;}
+        #div1{ margin: 0 auto; display: block; margin-top: 50px; width: 250px; height: 250px; border-radius: 50%; overflow: hidden; box-shadow: 0px 0px 20px #adadad;}
+	</style>
+    <script src="../js/stite.touch.js" type="text/javascript"></script>
+</head>
+<body>
+    <h3>touch中的swiperight方法</h3>
+    <img src="../img/d.jpg" draggable="false" id="div1" alt="" />
+    <script type="text/javascript">
+    	window.onload = function(){
+    		var odemo = new StiteTouch('#div1','longTap',function(){
+                alert('长按执行');
+            });
+    	}
+    </script>
+</body>
+</html>
