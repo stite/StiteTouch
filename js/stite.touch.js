@@ -156,7 +156,7 @@
             if(lock) return false;
             endLax = ev.x;
             endLay = ev.y;
-            if(Math.abs(endLax-startLax)>20){
+            if(Math.abs(endLax-startLax)>20&&Math.abs(endLay-startLay)<20){
                 if(endLax-startLax>20){
                     fn.call(this,ev);
                 }
@@ -180,7 +180,7 @@
             if(lock) return false;
             endLax = ev.x;
             endLay = ev.y;
-            if(Math.abs(endLax-startLax)>20){
+            if(Math.abs(endLax-startLax)>20&&Math.abs(startLay-endLay)<20){
                 if(endLax-startLax<-20){
                     fn.call(this,ev);
                 }
@@ -204,7 +204,7 @@
             if(lock) return false;
             endLax = ev.x;
             endLay = ev.y;
-            if(Math.abs(endLay-startLay)>20){
+            if(Math.abs(endLay-startLay)>20&&Math.abs(startLax-endLax)<20){
                 if(endLay-startLay<-20){
                     fn.call(this,ev);
                 }
@@ -228,7 +228,7 @@
             if(lock) return false;
             endLax = ev.x;
             endLay = ev.y;
-            if(Math.abs(endLay-startLay)>20){
+            if(Math.abs(endLay-startLay)>20&&Math.abs(endLax-startLax)<20){
                 if(endLay-startLay>20){
                     fn.call(this,ev);
                 }
